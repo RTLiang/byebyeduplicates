@@ -17,18 +17,13 @@ javascript-obfuscator .\settings.js --output $tempDir.FullName\settings.js `
     --unicode-escape-sequence true `
     --debug-protection true
 
-javascript-obfuscator .\background.js --output $tempDir.FullName\background.js `
-    --control-flow-flattening true `
-    --dead-code-injection true `
-    --self-defending true `
-    --disable-console-output true `
-    --string-array-encoding rc4 `
-    --transform-object-keys true `
-    --unicode-escape-sequence true `
-    --debug-protection true
+# javascript-obfuscator .\background.js --output $tempDir.FullName\background.js `
+#     --self-defending true `
+#     --disable-console-output true `
+#     --debug-protection true
 
 # 压缩HTML
-html-minifier .\index.html `
+html-minifier .\settings.html `
     --collapse-whitespace `
     --remove-comments `
     --remove-optional-tags `
@@ -47,7 +42,7 @@ try {
         -not $fullPath.Contains("\.git") -and
         -not $fullPath.Contains("\docs") -and
         -not $fullPath.Contains("\TempPublish") -and
-        $_.Name -notin @("changelog.md", "readme.md", "compress.ps1",".gitignore","script.js","index.html","background.js","settings.js")
+        $_.Name -notin @("changelog.md", "readme.md", "compress.ps1",".gitignore","script.js","index.html","settings.js","settings.html")
     } | ForEach-Object {
         $targetPath = $_.FullName.Replace((Get-Location).Path, $tempDir.FullName)
         if (-not (Test-Path (Split-Path $targetPath -Parent))) {
@@ -66,7 +61,7 @@ try {
     Move-Item -Path $zipFileName -Destination $parentPath -Force
 }
 finally {
-    # Remove-Item $tempDir -Recurse -Force
+    Remove-Item $tempDir -Recurse -Force
 }
 
 Write-Host "Package created: $parentPath\$zipFileName"
