@@ -1,0 +1,50 @@
+{
+  "title": {
+    "message": "Bye Bye duplicates",
+    "description": "Extension name"
+  },
+  "description": {
+    "message": "一个移除重复标签页的Chrome扩展",
+    "description": "Extension description"
+  },
+  "settings_title": {
+    "message": "重复标签页关闭设置",
+    "description": "Title for settings page"
+  },
+  "enable_auto_close": {
+    "message": "启用自动关闭",
+    "description": "Label for auto close toggle"
+  },
+  "interval_label": {
+    "message": "关闭检查间隔（秒）：",
+    "description": "Label for interval selector"
+  },
+  "interval_instant": {
+    "message": "即时",
+    "description": "Option for instant interval"
+  },
+  "interval_1sec": {
+    "message": "1秒",
+    "description": "Option for 1 second interval"
+  },
+  "interval_3sec": {
+    "message": "3秒",
+    "description": "Option for 3 seconds interval"
+  },
+  "interval_5sec": {
+    "message": "5秒",
+    "description": "Option for 5 seconds interval"
+  },
+  "group_google_searches": {
+    "message": "将不同参数的Google搜索视为相同URL",
+    "description": "Label for Google search grouping option"
+  },
+  "keep_media_tabs": {
+    "message": "保留正在播放音频/视频的标签页",
+    "description": "Label for media tabs preservation option"
+  },
+  "manual_close_button": {
+    "message": "立即关闭重复标签页",
+    "description": "Text for manual close button"
+  }
+}

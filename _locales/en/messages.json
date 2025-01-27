@@ -1,0 +1,50 @@
+{
+  "title": {
+    "message": "Bye Bye duplicates",
+    "description": "Extension name"
+  },
+  "description": {
+    "message": "A Chrome extension to remove duplicate Tabs",
+    "description": "Extension description"
+  },
+  "settings_title": {
+    "message": "Duplicate Tab Closer Settings",
+    "description": "Title for settings page"
+  },
+  "enable_auto_close": {
+    "message": "Enable Auto Close",
+    "description": "Label for auto close toggle"
+  },
+  "interval_label": {
+    "message": "Closing Check Interval (seconds):",
+    "description": "Label for interval selector"
+  },
+  "interval_instant": {
+    "message": "Instant",
+    "description": "Option for instant interval"
+  },
+  "interval_1sec": {
+    "message": "1 Second",
+    "description": "Option for 1 second interval"
+  },
+  "interval_3sec": {
+    "message": "3 Seconds",
+    "description": "Option for 3 seconds interval"
+  },
+  "interval_5sec": {
+    "message": "5 Seconds",
+    "description": "Option for 5 seconds interval"
+  },
+  "group_google_searches": {
+    "message": "Treat Google searches with different parameters as same URL",
+    "description": "Label for Google search grouping option"
+  },
+  "keep_media_tabs": {
+    "message": "Keep tabs playing audio/video",
+    "description": "Label for media tabs preservation option"
+  },
+  "manual_close_button": {
+    "message": "Close Duplicates Now",
+    "description": "Text for manual close button"
+  }
+}

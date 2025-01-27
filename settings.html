@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Duplicate Tab Closer Settings</title>
+  <title data-i18n="settings_title">Duplicate Tab Closer Settings</title>
   <style>
     body { width: 300px; padding: 15px; }
     .setting-group { margin-bottom: 1rem; }
@@ -12,35 +12,37 @@
 <body>
   <div class="setting-group">
     <label>
-        <input type="checkbox" id="extensionEnabled" checked> 
-        Enable Auto Close
-      </label>
-    <label for="interval">Closing Check Interval (seconds):</label>
+      <input type="checkbox" id="extensionEnabled" checked> 
+      <span data-i18n="enable_auto_close">Enable Auto Close</span>
+    </label>
+    <label for="interval">
+      <span data-i18n="interval_label">Closing Check Interval (seconds):</span>
+    </label>
     <select id="interval">
-      <option value="0.3">Instant</option>
-      <option value="1">1 Second</option>
-      <option value="3">3 Seconds</option>
-      <option value="5">5 Seconds</option>
+      <option value="0.3" data-i18n="interval_instant">Instant</option>
+      <option value="1" data-i18n="interval_1sec">1 Second</option>
+      <option value="3" data-i18n="interval_3sec">3 Seconds</option>
+      <option value="5" data-i18n="interval_5sec">5 Seconds</option>
     </select>
   </div>
 
   <div class="setting-group">
     <label>
       <input type="checkbox" id="groupGoogleSearches"> 
-      Treat Google searches with different parameters as same URL
+      <span data-i18n="group_google_searches">Treat Google searches with different parameters as same URL</span>
     </label>
   </div>
 
   <div class="setting-group">
     <label>
       <input type="checkbox" id="keepMediaTabs"> 
-      Keep tabs playing audio/video
+      <span data-i18n="keep_media_tabs">Keep tabs playing audio/video</span>
     </label>
   </div>
 
   <div class="setting-group">
     <button id="manualClose" style="margin-top: 15px; padding: 8px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
-      Close Duplicates Now
+      <span data-i18n="manual_close_button">Close Duplicates Now</span>
     </button>
   </div>
 

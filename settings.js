@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
+  // Apply translations
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    element.textContent = chrome.i18n.getMessage(key);
+  });
+  
   chrome.storage.sync.get({
     interval: 0.3,
     groupGoogleSearches: false,
