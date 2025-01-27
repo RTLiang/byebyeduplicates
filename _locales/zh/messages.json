@@ -4,7 +4,7 @@
     "description": "Extension name"
   },
   "description": {
-    "message": "一个移除重复标签页的Chrome扩展",
+    "message": "一个移除重复标签页的扩展",
     "description": "Extension description"
   },
   "settings_title": {
