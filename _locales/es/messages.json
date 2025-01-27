@@ -1,0 +1,50 @@
+{
+  "title": {
+    "message": "Bye Bye Duplicates",
+    "description": "Nombre de la extensión"
+  },
+  "description": {
+    "message": "Una extensión para eliminar pestañas duplicadas",
+    "description": "Descripción de la extensión"
+  },
+  "settings_title": {
+    "message": "Configuración del cierre de pestañas duplicadas",
+    "description": "Título de la página de configuración"
+  },
+  "enable_auto_close": {
+    "message": "Habilitar cierre automático",
+    "description": "Etiqueta para activar/desactivar el cierre automático"
+  },
+  "interval_label": {
+    "message": "Intervalo de verificación de cierre (segundos):",
+    "description": "Etiqueta para el selector de intervalo"
+  },
+  "interval_instant": {
+    "message": "Instantáneo",
+    "description": "Opción para intervalo instantáneo"
+  },
+  "interval_1sec": {
+    "message": "1 segundo",
+    "description": "Opción para intervalo de 1 segundo"
+  },
+  "interval_3sec": {
+    "message": "3 segundos",
+    "description": "Opción para intervalo de 3 segundos"
+  },
+  "interval_5sec": {
+    "message": "5 segundos",
+    "description": "Opción para intervalo de 5 segundos"
+  },
+  "group_google_searches": {
+    "message": "Tratar las búsquedas de Google con diferentes parámetros como la misma URL",
+    "description": "Etiqueta para la opción de agrupación de búsqueda de Google"
+  },
+  "keep_media_tabs": {
+    "message": "Mantener pestañas reproduciendo audio/video",
+    "description": "Etiqueta para la opción de preservación de pestañas multimedia"
+  },
+  "manual_close_button": {
+    "message": "Cerrar duplicados ahora",
+    "description": "Texto para el botón de cierre manual"
+  }
+}

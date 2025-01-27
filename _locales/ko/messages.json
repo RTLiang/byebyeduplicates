@@ -1,0 +1,50 @@
+{
+  "title": {
+    "message": "Bye Bye Duplicates",
+    "description": "확장 프로그램 이름"
+  },
+  "description": {
+    "message": "중복 탭을 제거하는 확장 프로그램",
+    "description": "확장 프로그램 설명"
+  },
+  "settings_title": {
+    "message": "중복 탭 닫기 설정",
+    "description": "설정 페이지 제목"
+  },
+  "enable_auto_close": {
+    "message": "자동 닫기 사용",
+    "description": "자동 닫기 토글 레이블"
+  },
+  "interval_label": {
+    "message": "닫기 확인 간격(초):",
+    "description": "간격 선택기 레이블"
+  },
+  "interval_instant": {
+    "message": "즉시",
+    "description": "즉시 간격 옵션"
+  },
+  "interval_1sec": {
+    "message": "1초",
+    "description": "1초 간격 옵션"
+  },
+  "interval_3sec": {
+    "message": "3초",
+    "description": "3초 간격 옵션"
+  },
+  "interval_5sec": {
+    "message": "5초",
+    "description": "5초 간격 옵션"
+  },
+  "group_google_searches": {
+    "message": "다른 매개변수의 Google 검색을 동일한 URL로 취급",
+    "description": "Google 검색 그룹화 옵션 레이블"
+  },
+  "keep_media_tabs": {
+    "message": "오디오/비디오를 재생하는 탭 유지",
+    "description": "미디어 탭 보존 옵션 레이블"
+  },
+  "manual_close_button": {
+    "message": "지금 중복 탭 닫기",
+    "description": "수동 닫기 버튼 텍스트"
+  }
+}

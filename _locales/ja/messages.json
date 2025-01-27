@@ -1,0 +1,50 @@
+{
+  "title": {
+    "message": "Bye Bye Duplicates",
+    "description": "拡張機能名"
+  },
+  "description": {
+    "message": "重複タブを削除する拡張機能",
+    "description": "拡張機能の説明"
+  },
+  "settings_title": {
+    "message": "重複タブクローザー設定",
+    "description": "設定ページのタイトル"
+  },
+  "enable_auto_close": {
+    "message": "自動クローズを有効にする",
+    "description": "自動クローズトグルのラベル"
+  },
+  "interval_label": {
+    "message": "クローズチェック間隔 (秒):",
+    "description": "間隔セレクターのラベル"
+  },
+  "interval_instant": {
+    "message": "瞬間",
+    "description": "瞬間間隔のオプション"
+  },
+  "interval_1sec": {
+    "message": "1秒",
+    "description": "1秒間隔のオプション"
+  },
+  "interval_3sec": {
+    "message": "3秒",
+    "description": "3秒間隔のオプション"
+  },
+  "interval_5sec": {
+    "message": "5秒",
+    "description": "5秒間隔のオプション"
+  },
+  "group_google_searches": {
+    "message": "異なるパラメータを持つGoogle検索を同じURLとして扱う",
+    "description": "Google検索グループ化オプションのラベル"
+  },
+  "keep_media_tabs": {
+    "message": "オーディオ/ビデオを再生しているタブを保持する",
+    "description": "メディアタブ保持オプションのラベル"
+  },
+  "manual_close_button": {
+    "message": "今すぐ重複を閉じる",
+    "description": "手動クローズボタンのテキスト"
+  }
+}

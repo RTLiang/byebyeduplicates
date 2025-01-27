@@ -1,0 +1,50 @@
+{
+  "title": {
+    "message": "Bye Bye Duplicates",
+    "description": "Nom de l'extension"
+  },
+  "description": {
+    "message": "Une extension pour supprimer les onglets en double",
+    "description": "Description de l'extension"
+  },
+  "settings_title": {
+    "message": "Paramètres du fermoir d'onglet en double",
+    "description": "Titre de la page de paramètres"
+  },
+  "enable_auto_close": {
+    "message": "Activer la fermeture automatique",
+    "description": "Étiquette pour activer/désactiver la fermeture automatique"
+  },
+  "interval_label": {
+    "message": "Intervalle de vérification de fermeture (secondes) :",
+    "description": "Étiquette pour le sélecteur d'intervalle"
+  },
+  "interval_instant": {
+    "message": "Instant",
+    "description": "Option pour l'intervalle instantané"
+  },
+  "interval_1sec": {
+    "message": "1 seconde",
+    "description": "Option pour un intervalle de 1 seconde"
+  },
+  "interval_3sec": {
+    "message": "3 secondes",
+    "description": "Option pour un intervalle de 3 secondes"
+  },
+  "interval_5sec": {
+    "message": "5 secondes",
+    "description": "Option pour un intervalle de 5 secondes"
+  },
+  "group_google_searches": {
+    "message": "Traiter les recherches Google avec différents paramètres comme URL identique",
+    "description": "Étiquette pour l'option de regroupement de recherche Google"
+  },
+  "keep_media_tabs": {
+    "message": "Conserver les onglets multimédias en cours de lecture audio/vidéo",
+    "description": "Étiquette pour l'option de conservation des onglets multimédias"
+  },
+  "manual_close_button": {
+    "message": "Fermer les doublons maintenant",
+    "description": "Texte pour le bouton de fermeture manuelle"
+  }
+}
