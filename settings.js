@@ -4,11 +4,13 @@ function init() {
   chrome.storage.sync.get({
     interval: 0.3,
     groupGoogleSearches: false,
-    enabled: true
+    enabled: true,
+    keepMediaTabs: true
   }, function(data) {
     document.getElementById('interval').value = data.interval;
     document.getElementById('groupGoogleSearches').checked = data.groupGoogleSearches;
     document.getElementById('extensionEnabled').checked = data.enabled;
+    document.getElementById('keepMediaTabs').checked = data.keepMediaTabs;
   });
 
   document.getElementById('interval').addEventListener('change', (e) => {
@@ -22,6 +24,10 @@ function init() {
 
   document.getElementById('extensionEnabled').addEventListener('change', (e) => {
     chrome.storage.sync.set({ enabled: e.target.checked });
+  });
+
+  document.getElementById('keepMediaTabs').addEventListener('change', (e) => {
+    chrome.storage.sync.set({ keepMediaTabs: e.target.checked });
   });
 
   document.getElementById('manualClose').addEventListener('click', () => {

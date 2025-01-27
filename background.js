@@ -2,7 +2,8 @@ function closeDuplicateTabs() {
     chrome.tabs.query({}, (tabs) => {
         chrome.storage.sync.get({ 
             enabled: true,
-            groupGoogleSearches: false 
+            groupGoogleSearches: false,
+            keepMediaTabs: true
         }, (data) => {
             if (!data.enabled) return;
             const urlMap = new Map();
@@ -15,6 +16,11 @@ function closeDuplicateTabs() {
                     tab.url?.startsWith('about:') ||
                     tab.url?.startsWith('opera://') ||
                     !tab.url) {
+                    return;
+                }
+
+                // Skip tabs playing media if option enabled
+                if (data.keepMediaTabs && (tab.audible || tab.mutedInfo.muted)) {
                     return;
                 }
 
@@ -35,7 +41,13 @@ function closeDuplicateTabs() {
             // Second pass: close duplicates
             urlMap.forEach((ids, url) => {
                 if (ids.length > 1) {
-                    const tabsToClose = ids.slice(0, -1);
+                    // Get all tabs for this URL and sort by lastAccessed time
+                    const sortedTabs = tabs
+                        .filter(t => ids.includes(t.id))
+                        .sort((a, b) => b.lastAccessed - a.lastAccessed);
+                    
+                    // Keep only the most recently accessed tab
+                    const tabsToClose = sortedTabs.slice(1).map(t => t.id);
                     chrome.tabs.remove(tabsToClose);
                 }
             });
@@ -110,6 +122,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           return;
         }
 
+        // Skip tabs playing media if option enabled
+        if (data.keepMediaTabs && (tab.audible || tab.mutedInfo.muted)) {
+            return;
+        }
+
         let processedUrl = tab.url;
         if (urlMap.has(processedUrl)) {
           urlMap.get(processedUrl).push(tab.id);
@@ -121,7 +138,13 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       // Close duplicates immediately
       urlMap.forEach((ids, url) => {
         if (ids.length > 1) {
-          const tabsToClose = ids.slice(0, -1);
+          // Get all tabs for this URL and sort by lastAccessed time
+          const sortedTabs = tabs
+              .filter(t => ids.includes(t.id))
+              .sort((a, b) => b.lastAccessed - a.lastAccessed);
+          
+          // Keep only the most recently accessed tab
+          const tabsToClose = sortedTabs.slice(1).map(t => t.id);
           chrome.tabs.remove(tabsToClose);
         }
       });

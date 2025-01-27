@@ -13,6 +13,7 @@ A Chrome extension that automatically closes duplicate tabs to keep your browser
 - 🛡️ Manifest V3 compliant
 - 🎚️ Global on/off toggle
 - 🎯 Manual close button for immediate action
+- 🔊 Preserve tabs playing audio/video (configurable)
 
 ## Installation
 
