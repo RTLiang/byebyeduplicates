@@ -17,10 +17,6 @@ javascript-obfuscator .\settings.js --output $tempDir.FullName\settings.js `
     --unicode-escape-sequence true `
     --debug-protection true
 
-# javascript-obfuscator .\background.js --output $tempDir.FullName\background.js `
-#     --self-defending true `
-#     --disable-console-output true `
-#     --debug-protection true
 
 # 压缩HTML
 html-minifier .\settings.html `
