@@ -2,6 +2,11 @@
 
 A Chrome extension that automatically closes duplicate tabs to keep your browser organized.
 
+[![Download on Edge Add-ons](https://img.shields.io/badge/Download-Edge_Add--ons-blue?style=for-the-badge&logo=microsoft-edge)](https://microsoftedge.microsoft.com/addons/detail/bye-bye-duplicates/efoibofdhcmlmmchpffhmkagbkcihjlj)
+
+[![User Guide on Notion](https://img.shields.io/badge/User_Guide-Notion-black?style=for-the-badge&logo=notion)](https://www.notion.so/liangrt/Bye-Bye-Duplicates-User-Guide-1882e1e0025d80b594b5e183b7f0da00)
+
+
 ## Features
 
 - 🚀 Automatic duplicate tab detection
