@@ -6,7 +6,6 @@
   "manifest_version": 3,
   "permissions": [
     "tabs",
-    "tabGroups",
     "storage"
   ],
   "host_permissions": [
