@@ -109,44 +109,53 @@ function normalizeGoogleUrl(url) {
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'manualClose') {
-    chrome.tabs.query({}, (tabs) => {
-      const urlMap = new Map();
-      
-      // Process all tabs synchronously
-      tabs.forEach(tab => {
-        if (tab.url?.startsWith('chrome://') ||
-            tab.url?.startsWith('edge://') ||
-            tab.url?.startsWith('about:') ||
-            tab.url?.startsWith('opera://') ||
-            !tab.url) {
-          return;
-        }
+    // Get the active tab first
+    chrome.tabs.query({active: true, currentWindow: true}, (activeTabs) => {
+      if (activeTabs.length === 0) return;
 
-        // Skip tabs playing media if option enabled
-        if (data.keepMediaTabs && (tab.audible || tab.mutedInfo.muted)) {
-            return;
-        }
-
-        let processedUrl = tab.url;
-        if (urlMap.has(processedUrl)) {
-          urlMap.get(processedUrl).push(tab.id);
-        } else {
-          urlMap.set(processedUrl, [tab.id]);
-        }
-      });
-
-      // Close duplicates immediately
-      urlMap.forEach((ids, url) => {
-        if (ids.length > 1) {
-          // Get all tabs for this URL and sort by lastAccessed time
-          const sortedTabs = tabs
-              .filter(t => ids.includes(t.id))
-              .sort((a, b) => b.lastAccessed - a.lastAccessed);
+      // Retrieve user settings
+      chrome.storage.sync.get({ keepMediaTabs: true }, (data) => {
+        // Now query all tabs
+        chrome.tabs.query({}, (tabs) => {
+          const urlMap = new Map();
           
-          // Keep only the most recently accessed tab
-          const tabsToClose = sortedTabs.slice(1).map(t => t.id);
-          chrome.tabs.remove(tabsToClose);
-        }
+          // Process all tabs synchronously
+          tabs.forEach(tab => {
+            if (tab.url?.startsWith('chrome://') ||
+                tab.url?.startsWith('edge://') ||
+                tab.url?.startsWith('about:') ||
+                tab.url?.startsWith('opera://') ||
+                !tab.url) {
+              return;
+            }
+
+            // Skip tabs playing media if option enabled
+            if (data.keepMediaTabs && (tab.audible || tab.mutedInfo.muted)) {
+              return;
+            }
+
+            let processedUrl = tab.url;
+            if (urlMap.has(processedUrl)) {
+              urlMap.get(processedUrl).push(tab.id);
+            } else {
+              urlMap.set(processedUrl, [tab.id]);
+            }
+          });
+
+          // Close duplicates immediately
+          urlMap.forEach((ids, url) => {
+            if (ids.length > 1) {
+              // Get all tabs for this URL and sort by lastAccessed time
+              const sortedTabs = tabs
+                  .filter(t => ids.includes(t.id))
+                  .sort((a, b) => b.lastAccessed - a.lastAccessed);
+              
+              // Keep only the most recently accessed tab
+              const tabsToClose = sortedTabs.slice(1).map(t => t.id);
+              chrome.tabs.remove(tabsToClose);
+            }
+          });
+        });
       });
     });
   }

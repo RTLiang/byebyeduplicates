@@ -6,11 +6,10 @@
   "manifest_version": 3,
   "permissions": [
     "tabs",
-    "storage"
+    "storage",
+    "activeTab"
   ],
-  "host_permissions": [
-    "<all_urls>"
-  ],
+  "host_permissions": [],
   "icons": {
     "128": "icon128.png"
   },
